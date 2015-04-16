@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://nhso.go.th/item-web-service"
+	targetNamespace="http://nhso.go.th/item-web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="findItemByNameRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="itemName" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="findItemByNameResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="itemList" type="tns:item" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="item">
+		<xs:sequence>
+			<xs:element name="id" type="xs:int" />
+			<xs:element name="itemName" type="xs:string" />
+			<xs:element name="itemCode" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
